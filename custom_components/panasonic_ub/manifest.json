@@ -2,6 +2,7 @@
   "domain": "panasonic_ub",
   "name": "Panasonic UB Blu-ray Player",
   "documentation": "https://github.com/matteoraf/ha-panasonic_ub",
+  "issue_tracker": "https://github.com/matteoraf/ha-panasonic_ub/issues",
   "dependencies": [],
   "codeowners": [],
   "requirements": [],
