@@ -18,7 +18,7 @@ This custom component integrates Panasonic UB-series Blu-ray players (e.g., UB82
 
 ## Installation
 
-## Installation through HACS
+### Installation through HACS
 
 If this repository is not yet listed in the HACS default store, install it as a custom repository:
 
