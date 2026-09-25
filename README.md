@@ -18,6 +18,18 @@ This custom component integrates Panasonic UB-series Blu-ray players (e.g., UB82
 
 ## Installation
 
+### Installation through HACS
+
+If this repository is not yet listed in the HACS default store, install it as a custom repository:
+
+1. Open **HACS** in Home Assistant.
+2. Open **Integrations** and select the three-dot menu in the upper-right corner.
+3. Select **Custom repositories**.
+4. Enter `https://github.com/matteoraf/ha-panasonic_ub` as the repository.
+5. Select **Integration** as the repository type.
+6. Select **Add** or **Download** and wait for the installation to complete.
+7. Restart Home Assistant.
+
 ### Manual
 
 1.  Download the `panasonic_ub` folder from this repository.
