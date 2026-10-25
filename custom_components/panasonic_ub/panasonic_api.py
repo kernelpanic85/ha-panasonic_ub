@@ -197,18 +197,8 @@ class PanasonicSecureAPI:
         result = await self.send_command(code)
         return result is not None
 
-    async def get_status_details(self) -> tuple[str | None, int | None]:
-        """Poll the UB status using REVIEW.
-
-        The unauthenticated UB REVIEW response exposes the status code, but
-        the time-like field in the response is not the current title's total
-        duration. Leave duration unset until a reliable title-duration
-        command is available.
-
-        Returns:
-            A status code and an unavailable duration.
-
-        """
+    async def get_status(self) -> str | None:
+        """Poll the device status using REVIEW."""
         response_text = await self.send_command(
             COMMAND_MAPPING["STATUS"], enable_auth=True
         )
@@ -216,14 +206,9 @@ class PanasonicSecureAPI:
         if response_text:
             parts = response_text.split(",")
             if len(parts) > 5:
-                return parts[5], None
+                return parts[5]
 
-        return None, None
-
-    async def get_status(self) -> str | None:
-        """Poll the device status using REVIEW."""
-        status_code, _ = await self.get_status_details()
-        return status_code
+        return None
 
     async def get_play_position(self) -> int | None:
         """Poll the playback time (PST). Skipped Auth for optimization.

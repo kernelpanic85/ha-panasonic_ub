@@ -131,13 +131,6 @@ class PanasonicBlurayEntity(CoordinatorEntity, MediaPlayerEntity):
         return None
 
     @property
-    def media_duration(self) -> int | None:
-        """Return the current title duration."""
-        if self.coordinator.data:
-            return self.coordinator.data.get("duration")
-        return None
-
-    @property
     def media_position_updated_at(self) -> datetime | None:
         """Return when the current playback position was refreshed."""
         return self._media_position_updated_at

@@ -30,16 +30,15 @@ class PanasonicUBCoordinator(DataUpdateCoordinator):
     async def _async_update_data(self):
         """Fetch data from API endpoint."""
         # 1. Get Status
-        status_code, duration = await self.api.get_status_details()
+        status_code = await self.api.get_status()
 
         # If unavailable, return None state (handled by entity)
         if status_code is None:
-            return {"status_code": None, "position": None, "duration": None}
+            return {"status_code": None, "position": None}
 
         data = {
             "status_code": status_code,
             "position": None,
-            "duration": duration,
         }
 
         # 2. Get Time (if playing)
